@@ -19,7 +19,7 @@ import androidx.lifecycle.Lifecycle
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DynamicSelectedTextFiled(
+fun DynamicSelectedTextField(
     selectedValue: String,
     options: List<String>,
     label: String,
