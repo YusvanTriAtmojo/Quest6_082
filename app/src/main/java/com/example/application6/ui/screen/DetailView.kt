@@ -81,7 +81,25 @@ fun DetailView(
                 )
                 .fillMaxSize(),
         ) {
-
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                listDetail.forEach { items ->
+                    CardSection(
+                        judulParam = items.first,
+                        isiParam = items.second
+                    )
+                }
+                Spacer(modifier = Modifier.padding(16.dp))
+                Button (onClick = { onClickButton() })
+                {
+                    Text("Back")
+                }
+            }
         }
     }
 }
