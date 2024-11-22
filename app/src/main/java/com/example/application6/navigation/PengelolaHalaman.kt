@@ -32,6 +32,7 @@ fun MahasiswaApp(
     navController: NavHostController = rememberNavController()
 ){
     val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
+    val krsStateUi = krsViewModel.krsStateUi.collectAsState().value
     NavHost(
         navController = navController,
         startDestination = Halaman.Splash.name,
@@ -61,6 +62,13 @@ fun MahasiswaApp(
                 onSubmitButtonClicked = { krsViewModel.saveDataKRS(it)
                     navController.navigate((Halaman.Tampil.name))},
                 onBackButtonClicked = { navController.popBackStack() }
+            )
+        }
+        composable(route = Halaman.Tampil.name){
+            DetailView(
+                uiStateDetailMahasiswa = mahasiswaUiState,
+                uiStateDetailMatakuliah = krsStateUi,
+                onClickButton = { navController.navigate((Halaman.Splash.name)) }
             )
         }
     }
