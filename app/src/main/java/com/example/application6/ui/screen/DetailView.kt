@@ -53,7 +53,22 @@ fun DetailView(
                 .padding(25.dp)
             ,verticalAlignment = Alignment.CenterVertically
         ){
-
+            Image(
+                painter = painterResource(
+                    id = R.drawable.umy
+                ),
+                contentDescription = "",
+                modifier = Modifier.size(45.dp)
+            )
+            Spacer(modifier = Modifier.padding(start = 16.dp))
+            Column {
+                Text(
+                    text = "Detail KRS Mahasiswa",
+                    color = Color.Red,
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
         }
     }
 }
